@@ -1,4 +1,5 @@
-FROM node:22-bullseye
+# Builds and runs the backend with the native libraries required by Prisma and Puppeteer.
+FROM node:22-bookworm
 
 WORKDIR /app
 
