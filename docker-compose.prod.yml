@@ -1,3 +1,4 @@
+# Production stack for the movie ticket booking application and its persistent infrastructure.
 version: '3.8'
 
 services:
@@ -26,6 +27,8 @@ services:
     restart: always
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      # The host Certbot process writes HTTP-01 challenges here for Nginx to serve.
+      - /var/www/certbot:/var/www/certbot:ro
     networks:
       - app-net
 
